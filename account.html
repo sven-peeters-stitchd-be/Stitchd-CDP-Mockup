@@ -11,53 +11,58 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
-    <div class="container">
-        <div class="navbar">
-            <div class="logo">
-                <a href="index.html"><img src="images/logo.png" alt="logo" width="125px"></a>
+<body onload="onLoad()">
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png" alt="logo" width="125px"></a>
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a id="nav-account" class="selected-nav-item" href="account.html">Account</a></li>
+                    </ul>
+                </nav>
+                <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+                <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
             </div>
-            <nav>
-                <ul id="MenuItems">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Contact</a></li>
-                    <li><a href="account.html">Account</a></li>
-                </ul>
-            </nav>
-            <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
-            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
         </div>
     </div>
 
     <!-- Account Page -->
     <div class="account-page">
         <div class="container">
-            <div class="row">
-                <div class="col-2">
-                    <img src="images/image1.png" width="100%">
-                </div>
+            <div class="row">                
                 <div class="col-2">
                     <div class="form-container">
+
                         <div class="form-btn">
-                            <span onclick="login()">Login</span>
-                            <span onclick="register()">Register</span>
+                            <span onclick="loginTabClicked()">Login</span>
+                            <span onclick="registerTabClicked()">Register</span>
+                            <span onclick="logoutTabClicked()">Logout</span>
                             <hr id="Indicator">
                         </div>
+
                         <form id="LoginForm">
-                            <input type="text" placeholder="Username">
+                            <input id="LoginFormUserName" type="text" placeholder="Username">
                             <input type="password" placeholder="Password">
                             <button type="submit" class="btn">Login</button>
                             <a href="">Forget Password</a>
+                        </form>   
+                        
+                        <form id="LogoutForm">
+                            <button type="submit" class="btn btnLogout">Logout</button>
                         </form>
 
                         <form id="RegForm">
-                            <input type="text" placeholder="Username">
+                            <input id="RegFormUserName" type="text" placeholder="Username">
                             <input type="email" placeholder="Email">
                             <input type="password" placeholder="Password">
                             <button type="submit" class="btn">Register</button>
-                        </form>
+                        </form>                       
+                        
                     </div>
                 </div>
             </div>
@@ -65,44 +70,24 @@
     </div>
 
 
-    <!-- Footer -->
-    <div class="footer">
+     <!-- Footer -->
+     <div class="footer">
         <div class="container">
-            <div class="row">
+            <div class="row">                
                 <div class="footer-col-1">
-                    <h3>Download Our App</h3>
-                    <p>Download App for Android and ios mobile phone.</p>
-                    <div class="app-logo">
-                        <img src="images/play-store.png">
-                        <img src="images/app-store.png">
-                    </div>
-                </div>
-                <div class="footer-col-2">
-                    <img src="images/logo-white.png">
-                    <p>Our Purpose Is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.
+                    <img src="images/logo.png">
+                    <p>Tailoring digital data to fit your needs
                     </p>
-                </div>
-                <div class="footer-col-3">
-                    <h3>Useful Links</h3>
-                    <ul>
-                        <li>Coupons</li>
-                        <li>Blog Post</li>
-                        <li>Return Policy</li>
-                        <li>Join Affiliate</li>
-                    </ul>
-                </div>
-                <div class="footer-col-4">
+                </div>                
+                <div class="footer-col-2">
                     <h3>Follow Us</h3>
                     <ul>
-                        <li>Facebook</li>
-                        <li>Twitter</li>
-                        <li>Instagram</li>
-                        <li>Youtube</li>
+                        <li><a href="https://www.linkedin.com/company/stitchd">LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
             <hr>
-            <p class="copyright">Copyright 2020 - Samwit Adhikary</p>
+            <p class="copyright">Copyright 2023 - Stitchd</p>
         </div>
     </div>
 
@@ -123,21 +108,66 @@
 
     <!-- Toggle Form -->
     <script>
+
         var LoginForm = document.getElementById("LoginForm");
         var RegForm = document.getElementById("RegForm");
+        var LogoutForm = document.getElementById("LogoutForm");
         var Indicator = document.getElementById("Indicator");
-        function register() {
-            RegForm.style.transform = "translatex(0px)";
-            LoginForm.style.transform = "translatex(0px)";
+
+        var accountNavigation = document.getElementById("nav-account");
+
+        function registerTabClicked() {
+            RegForm.style.transform = "translatex(150px)";
+            LoginForm.style.transform = "translatex(1000px)";
+            LogoutForm.style.transform = "translatex(1000px)";
             Indicator.style.transform = "translateX(100px)";
-
         }
-        function login() {
-            RegForm.style.transform = "translatex(300px)";
-            LoginForm.style.transform = "translatex(300px)";
+        function loginTabClicked() {
+            RegForm.style.transform = "translatex(1000px)";
+            LoginForm.style.transform = "translatex(150px)";
+            LogoutForm.style.transform = "translatex(1000px)";
             Indicator.style.transform = "translate(0px)";
-
         }
+        function logoutTabClicked() {
+            RegForm.style.transform = "translatex(1000px)";
+            LoginForm.style.transform = "translatex(1000px)";
+            LogoutForm.style.transform = "translatex(150px)";
+            Indicator.style.transform = "translateX(200px)";
+        }
+
+        function onLoad() {
+
+            if (localStorage.userLoggedIn == "true") {
+                logoutTabClicked();
+                accountNavigation.text = "Account (" + localStorage.userName + ")";
+            }
+            else {
+                loginTabClicked();
+                accountNavigation.text = "Account";
+            }
+
+            LoginForm.addEventListener("submit", (e) => {
+
+                localStorage.userLoggedIn = true;
+                localStorage.userName = document.getElementById("LoginFormUserName").value;
+                
+            });
+
+            RegForm.addEventListener("submit", (e) => {
+
+                localStorage.userLoggedIn = true;
+                localStorage.userName = document.getElementById("RegFormUserName").value;
+                
+            });
+
+            LogoutForm.addEventListener("submit", (e) => {
+                
+                localStorage.userLoggedIn = false;
+                localStorage.userName = "";
+                
+            });
+        }
+
     </script>
 
 </body>

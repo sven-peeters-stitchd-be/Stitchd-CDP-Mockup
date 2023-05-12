@@ -5,7 +5,7 @@
 }
 
 body{
-    font-family: 'Poppins', sans-serif;
+    font-family: Quicksand,"Helvetica Neue",Arial,sans-serif;
 }
 
 .navbar
@@ -27,9 +27,12 @@ nav ul li{
     display: inline-block;
     margin-right: 20px;
 }
-a{
+nav a{
     text-decoration: none;
-    color: #555;
+    color: #236AAC;
+}
+nav .selected-nav-item{
+    color: rgb(237,107,98);
 }
 p{
     color: #555;
@@ -71,8 +74,12 @@ p{
 .btn:hover{
     background: #563434;
 }
+.btn.btnCheckOut {
+    float: right;
+}
 .header{
-    background: radial-gradient(#fff,#ffd6d6);
+    background: #F4F4F4;
+    background-image: url("images/banner.png");
 }
 .header .row{
     margin-top: 70px;
@@ -109,7 +116,7 @@ p{
     margin: 0 auto 80px;
     position: relative;
     line-height: 60px;
-    color: #555;
+    color: rgb(237,107,98);
 }
 .title::after{
     content: '';
@@ -198,16 +205,20 @@ small{
 }
 /* Footer */
 .footer{
-    background: black;
-    color: #8a8a8a;
+    background: #F4F4F4;
+    background-image: url("images/banner.png");
+    color: rgb(237,107,98);
     font-size: 14px;
     padding: 60px 0 20px;
 }
+.footer a{
+    color: #286DAD;
+}
 .footer p{
-    color: #8a8a8a;
+    color: #286DAD;
 }
 .footer h3{
-    color: #fff;
+    color: rgb(237,107,98);
     margin-bottom: 20px;
 }
 .footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
@@ -382,12 +393,11 @@ th:last-child{
 
 /* Account page */
 .account-page{
-    padding: 50px 0;
-    background: radial-gradient(#fff, #ffd6d6);
+    padding: 50px 0;    
 }
 .form-container{
     background: #fff;
-    width: 300px;
+    width: 600px;
     height: 400px;
     position: relative;
     text-align: center;
@@ -427,14 +437,21 @@ form .btn{
     cursor: pointer;
     margin: 10px 0;
 }
+form .btn.btnLogout{
+    width: 300px;
+}
+
 form .btn:focus{
     outline: none;
 }
 #LoginForm{
-    left: -300px;
+    transform: translateX(1000px);
 }
 #RegForm{
-    left: 0;
+    transform: translateX(150px);
+}
+#RegForm{
+    transform: translateX(1000px);
 }
 form a{
     font-size: 12px;

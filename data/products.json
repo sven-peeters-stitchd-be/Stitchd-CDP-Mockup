@@ -1,0 +1,23 @@
+[{
+    "productId": "product-1",
+    "title": "Product 1",
+    "description": "Description of product 1",
+    "category": "CAT1",
+    "imageUrl": "images/product-1.jpg",
+    "price" : 49.99
+}, {
+    "productId": "product-2",
+    "title": "Product 2",
+    "description": "Description of product 2",
+    "category": "CAT1",
+    "imageUrl": "images/product-2.jpg",
+    "price" : 23.99
+}, {
+    "productId": "product-3",
+    "title": "Product 3",
+    "description": "Description of product 3",
+    "category": "CAT2",
+    "imageUrl": "images/product-3.jpg",
+    "price" : 59.99
+}
+]
