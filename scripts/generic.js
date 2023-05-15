@@ -9,7 +9,23 @@ function refreshAccountInfoLabel() {
         if (typeof logoutTabClicked === "function")
             logoutTabClicked();
         accountNavigation.text = "Account (" + localStorage.userName + ")";
-        exponea.identify(localStorage.userName.toLowerCase().trim());
+        
+        exponea.identify(
+            {
+              'registered':localStorage.userName.toLowerCase().trim()
+            },
+            {
+              'user_id':localStorage.userName.toLowerCase().trim(),
+            },
+            function(){
+              //successCallback
+            },
+            function(){
+              //errorrCallback
+            },
+            true
+          );
+
     }
     else {
         if (typeof loginTabClicked === "function")

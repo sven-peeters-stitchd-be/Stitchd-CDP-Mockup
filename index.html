@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="scripts/generic.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
+    <link rel="shortcut serviceworker" type="text/javascript" href="scripts/service-worker.js?">
 
     <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -28,7 +29,7 @@
         experimental: {
             non_personalized_weblayers: true
         },
-        new_experiments: { mode: "async" },
+        new_experiments: { mode: "sync" },
         // replace with current customer ID or leave commented out for an anonymous customer
         // customer: window.currentUserId,
         track: {
