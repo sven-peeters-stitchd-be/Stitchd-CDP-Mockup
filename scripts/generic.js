@@ -9,6 +9,7 @@ function refreshAccountInfoLabel() {
         if (typeof logoutTabClicked === "function")
             logoutTabClicked();
         accountNavigation.text = "Account (" + localStorage.userName + ")";
+        exponea.identify(localStorage.userName.toLowerCase().trim());
     }
     else {
         if (typeof loginTabClicked === "function")
