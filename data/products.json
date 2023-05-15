@@ -1,23 +1,59 @@
 [{
-    "productId": "product-1",
-    "title": "Product 1",
-    "description": "Description of product 1",
-    "category": "CAT1",
-    "imageUrl": "images/product-1.jpg",
-    "price" : 49.99
+    "productId": "emp-pieter",
+    "title": "Pieter Vanderoost",
+    "description": "A project manager is a dynamic and organized professional who thrives in a fast-paced environment, leading teams and driving projects to successful completion.\nWith excellent communication and interpersonal skills, a project manager effectively collaborates with stakeholders, team members, and clients, ensuring clarity of goals and expectations throughout the project lifecycle.\nAs a natural problem-solver, a project manager anticipates and addresses challenges, proactively adapting strategies and allocating resources to keep projects on track and within budget.",
+    "category": "Project Manager",
+    "imageUrl": "images/stitchd_HR-20.jpg",
+    "price" : 120
 }, {
-    "productId": "product-2",
-    "title": "Product 2",
-    "description": "Description of product 2",
-    "category": "CAT1",
-    "imageUrl": "images/product-2.jpg",
-    "price" : 23.99
+    "productId": "emp-jente",
+    "title": "Jente De Ridder",
+    "description": "A project manager is a dynamic and organized professional who thrives in a fast-paced environment, leading teams and driving projects to successful completion.\nWith excellent communication and interpersonal skills, a project manager effectively collaborates with stakeholders, team members, and clients, ensuring clarity of goals and expectations throughout the project lifecycle.\nAs a natural problem-solver, a project manager anticipates and addresses challenges, proactively adapting strategies and allocating resources to keep projects on track and within budget.",
+    "category": "Project Manager",
+    "imageUrl": "images/stitchd_HR-18.jpg",
+    "price" : 120
 }, {
-    "productId": "product-3",
-    "title": "Product 3",
-    "description": "Description of product 3",
-    "category": "CAT2",
-    "imageUrl": "images/product-3.jpg",
-    "price" : 59.99
+    "productId": "emp-dimitri",
+    "title": "Dimitri Dries",
+    "description": "A digital analyst is a data-driven professional who specializes in collecting, analyzing, and interpreting digital data to derive insights and make informed decisions.\nUsing various analytics tools and techniques, a digital analyst assesses website traffic, user behavior, and online marketing campaigns to optimize performance and identify areas for improvement.\nWith a deep understanding of key performance indicators (KPIs) and a strong analytical mindset, a digital analyst plays a crucial role in helping organizations make data-backed decisions to enhance their digital presence and drive business growth.",
+    "category": "Digital Analyst",
+    "imageUrl": "images/stitchd_HR-4.jpg",
+    "price" : 100
+}, {
+    "productId": "emp-ilse",
+    "title": "Ilse Bakx",
+    "description": "A digital analyst is a data-driven professional who specializes in collecting, analyzing, and interpreting digital data to derive insights and make informed decisions.\nUsing various analytics tools and techniques, a digital analyst assesses website traffic, user behavior, and online marketing campaigns to optimize performance and identify areas for improvement.\nWith a deep understanding of key performance indicators (KPIs) and a strong analytical mindset, a digital analyst plays a crucial role in helping organizations make data-backed decisions to enhance their digital presence and drive business growth.",
+    "category": "Digital Analyst",
+    "imageUrl": "images/stitchd_HR-6.jpg",
+    "price" : 100
+}, {
+    "productId": "emp-liesbeth",
+    "title": "Liesbeth Benoit",
+    "description": "A marketing scientist is a hybrid professional who combines expertise in marketing and data analysis to drive evidence-based marketing strategies and decision-making.\nBy leveraging statistical models, experiments, and advanced analytics, a marketing scientist uncovers patterns and insights from large datasets, enabling businesses to optimize marketing campaigns, target audiences effectively, and measure campaign effectiveness.\nWith a focus on data-driven marketing, a marketing scientist helps organizations make informed decisions, allocate resources efficiently, and achieve measurable results in their marketing efforts.",
+    "category": "Marketing Scientist",
+    "imageUrl": "images/stitchd_ZW-2-4.jpg",
+    "price" : 100
+}, {
+    "productId": "emp-vince",
+    "title": "Vince Van Gestel",
+    "description": "A digital analyst is a data-driven professional who specializes in collecting, analyzing, and interpreting digital data to derive insights and make informed decisions.\nUsing various analytics tools and techniques, a digital analyst assesses website traffic, user behavior, and online marketing campaigns to optimize performance and identify areas for improvement.\nWith a deep understanding of key performance indicators (KPIs) and a strong analytical mindset, a digital analyst plays a crucial role in helping organizations make data-backed decisions to enhance their digital presence and drive business growth.",
+    "category": "Digital Analyst",
+    "imageUrl": "images/stitchd_HR-2.jpg",
+    "price" : 100
+}, {
+    "productId": "emp-stefan",
+    "title": "Stefan Maris",
+    "description": "A MarTech architect is a skilled professional who designs and implements technology solutions that optimize marketing operations and enhance customer experiences.\nBy evaluating and integrating various marketing technology platforms and tools, a MarTech architect creates a cohesive and efficient ecosystem that aligns with the organization's marketing goals and objectives.\nWith a deep understanding of marketing automation, data management, and customer journey mapping, a MarTech architect plays a critical role in driving the adoption of advanced marketing technologies to improve targeting, personalization, and overall marketing performance.",
+    "category": "MarTech Architect",
+    "imageUrl": "images/stitchd_HR-10.jpg",
+    "price" : 100
+}, {
+    "productId": "emp-dieter",
+    "title": "Dieter Ceulemans",
+    "description": "A MarTech developer is a software engineer or developer with expertise in designing and building marketing technology solutions and applications.\nWith a deep understanding of marketing principles and technology frameworks, a MarTech developer creates custom software solutions to automate marketing processes, integrate data from multiple sources, and enhance marketing campaign effectiveness.\nA MarTech developer collaborates with marketing teams and stakeholders to understand their requirements and translate them into scalable and efficient software solutions, enabling organizations to leverage technology for strategic marketing initiatives.",
+    "category": "MarTech Developer",
+    "imageUrl": "images/stitchd_HR-12.jpg",
+    "price" : 100
 }
+
 ]

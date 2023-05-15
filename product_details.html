@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="/scripts/generic.js"></script>
 </head>
 
 <body onload="onLoad()">
@@ -25,7 +26,12 @@
                         <li><a id="nav-account" href="account.html">Account</a></li>
                     </ul>
                 </nav>
-                <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+                <div class="cart-container">
+                    <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+                    <div>
+                        <a id="cart-item-count" style="text-decoration:none" class="overlay-cart-text" href="cart.html">0</a>
+                    </div>
+                </div>    
                 <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
             </div>
         </div>
@@ -80,8 +86,7 @@
     </script>
 
     <script>
-
-        var accountNavigation = document.getElementById("nav-account");
+        
         var productDetail = document.getElementById("product-detail-div");
         var productImg = document.getElementById("ProductImg");
 
@@ -89,12 +94,7 @@
 
         function onLoad() {
 
-            if (localStorage.userLoggedIn == "true") {
-                accountNavigation.text = "Account (" + localStorage.userName + ")";
-            }
-            else {
-                accountNavigation.text = "Account";
-            }
+            refreshAccountInfoLabel();
 
             fetch("./data/products.json")
                 .then(function (response) {                    
@@ -211,6 +211,8 @@
             }
 
             localStorage.cartContent = JSON.stringify(cartContent);
+
+            refreshCartCountLabel();
 
         }
 

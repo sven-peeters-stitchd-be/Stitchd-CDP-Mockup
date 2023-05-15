@@ -37,6 +37,35 @@ nav .selected-nav-item{
 p{
     color: #555;
 }
+
+body h2{
+    color: #236AAC;
+}
+
+body h5{
+    color: #ED6B62;
+}
+
+body h4{
+    color: #236AAC;
+}
+
+.stitchd_title {
+    text-align: center;
+    margin: 0 auto 20px;
+    position: relative;
+    line-height: 60px;    
+    color: #0254a0;
+    font-family: Quicksand,"Helvetica Neue",Arial,sans-serif;
+}
+
+.stitch_text {
+    text-align: center!important;
+    color: #9a9a9a;
+    font-family: Quicksand,"Helvetica Neue",Arial,sans-serif;
+    margin: 0px 500px 50px 500px;
+}
+
 .container{
     max-width: 1300px;
     margin: auto;
@@ -444,6 +473,25 @@ form .btn.btnLogout{
 form .btn:focus{
     outline: none;
 }
+
+.overlay-cart-text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    z-index: 2;
+}
+
+.cart-container {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
 #LoginForm{
     transform: translateX(1000px);
 }

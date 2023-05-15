@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="/scripts/generic.js"></script>
 </head>
 
 <body onload="onLoad()">
@@ -25,7 +26,12 @@
                         <li><a id="nav-account" class="selected-nav-item" href="account.html">Account</a></li>
                     </ul>
                 </nav>
-                <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+                <div class="cart-container">
+                    <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+                    <div>
+                        <a id="cart-item-count" style="text-decoration:none" class="overlay-cart-text" href="cart.html">0</a>
+                    </div>
+                </div>    
                 <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
             </div>
         </div>
@@ -114,20 +120,20 @@
         var LogoutForm = document.getElementById("LogoutForm");
         var Indicator = document.getElementById("Indicator");
 
-        var accountNavigation = document.getElementById("nav-account");
-
         function registerTabClicked() {
             RegForm.style.transform = "translatex(150px)";
             LoginForm.style.transform = "translatex(1000px)";
             LogoutForm.style.transform = "translatex(1000px)";
             Indicator.style.transform = "translateX(100px)";
         }
+
         function loginTabClicked() {
             RegForm.style.transform = "translatex(1000px)";
             LoginForm.style.transform = "translatex(150px)";
             LogoutForm.style.transform = "translatex(1000px)";
             Indicator.style.transform = "translate(0px)";
         }
+
         function logoutTabClicked() {
             RegForm.style.transform = "translatex(1000px)";
             LoginForm.style.transform = "translatex(1000px)";
@@ -137,14 +143,7 @@
 
         function onLoad() {
 
-            if (localStorage.userLoggedIn == "true") {
-                logoutTabClicked();
-                accountNavigation.text = "Account (" + localStorage.userName + ")";
-            }
-            else {
-                loginTabClicked();
-                accountNavigation.text = "Account";
-            }
+            refreshAccountInfoLabel();
 
             LoginForm.addEventListener("submit", (e) => {
 

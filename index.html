@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="/scripts/generic.js"></script>
 </head>
 
 <body onload="onLoad()">
@@ -26,11 +27,23 @@
                         <li><a id="nav-account" href="account.html">Account</a></li>
                     </ul>
                 </nav>
-                <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+                <div class="cart-container">
+                    <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+                    <div>
+                        <a id="cart-item-count" style="text-decoration:none" class="overlay-cart-text" href="cart.html">0</a>
+                    </div>
+                </div>                
                 <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
             </div>
             
         </div>
+    </div>
+
+    <div>
+    <h2 class="stitchd_title">
+        What we stand for
+    </h2> 
+    <p class="stitch_text">At Stitchd, we always present ourselves as we are. We aim for collegiality, both in our team and with customers. We are not a one-man show, but a team that both gains and gives confidence in order to learn and grow. We do this in a respectful and empathetic way, so that we can get the best out of every individual, team and organisation.</p>
     </div>
 
     <!-- Footer -->
@@ -71,17 +84,8 @@
 
     <script>
 
-        var accountNavigation = document.getElementById("nav-account");
-
-        function onLoad() {
-
-            if (localStorage.userLoggedIn == "true") {
-                accountNavigation.text = "Account (" + localStorage.userName + ")";
-            }
-            else {
-                accountNavigation.text = "Account";
-            }
-
+        function onLoad() {            
+            refreshAccountInfoLabel();
         }
 
     </script>

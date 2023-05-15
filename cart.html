@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="/scripts/generic.js"></script>
 </head>
 
 <body onload="onLoad()">
@@ -24,8 +25,13 @@
                         <li><a href="products.html">Products</a></li>
                         <li><a id="nav-account" href="account.html">Account</a></li>
                     </ul>
-                </nav>
-                <a href="cart.html"><img src="images/cart_selected.png" width="30px" height="30px"></a>
+                </nav>                
+                <div class="cart-container">
+                    <a href="cart.html"><img src="images/cart_selected.png" width="30px" height="30px"></a>
+                    <div>
+                        <a id="cart-item-count" style="text-decoration:none" class="overlay-cart-text" href="cart.html">0</a>
+                    </div>
+                </div>
                 <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
             </div>
         </div>
@@ -91,21 +97,14 @@
     </script>
 
     <script>
-
-        var accountNavigation = document.getElementById("nav-account");
+        
         var cartItems = document.getElementById("cart_items");
         var cartTotal = document.getElementById("cart_totals");
         var checkoutButton = document.getElementById("checkout_button");
 
         function onLoad() {
 
-            if (localStorage.userLoggedIn == "true") {
-                accountNavigation.text = "Account (" + localStorage.userName + ")";
-            }
-            else {
-                accountNavigation.text = "Account";
-            }
-
+            refreshAccountInfoLabel();
             showCart();
 
             checkoutButton.addEventListener("click",checkOut);
@@ -151,9 +150,10 @@
 
         function showCart() {
 
+            var cartTotal = 0.0;
+
             var cartContent = {};
-            cartContent.products = [];
-            cartContent.total = 0.0;
+            cartContent.products = [];            
 
             if (localStorage.cartContent != null) {
                 cartContent = JSON.parse(localStorage.cartContent);
@@ -199,8 +199,9 @@
 
                 productRowProduct.appendChild(productRowProductDiv);
                
-                productRowQuantity.innerText = thisCartProduct.quantity;
-                productRowSubTotal.innerText = thisCartProduct.quantity * thisCartProduct.product.price;
+                productRowQuantity.innerText = thisCartProduct.quantity;                
+                productRowSubTotal.innerText = thisCartProduct.quantity * thisCartProduct.product.price + " €";
+                cartTotal = cartTotal + thisCartProduct.quantity * thisCartProduct.product.price;
 
                 productRow.appendChild(productRowProduct);
                 productRow.appendChild(productRowQuantity);
@@ -209,6 +210,10 @@
                 cartItems.appendChild(productRow);
 
             }
+
+            cart_total.innerText = cartTotal + " €";
+
+            refreshCartCountLabel();
 
         }
 
