@@ -54,7 +54,7 @@
                 <nav>
                     <ul id="MenuItems">
                         <li><a href="index.html">Home</a></li>
-                        <li><a class="selected-nav-item" href="products.html">Products</a></li>
+                        <li><a class="selected-nav-item" href="products.html">Profiles</a></li>
                         <li><a id="nav-account" href="account.html">Account</a></li>
                     </ul>
                 </nav>
@@ -123,63 +123,7 @@
 
             refreshAccountInfoLabel();
 
-            fetch("./data/products.json")
-                .then(function (response) {                    
-                    return response.json();
-                })
-                .then(function (data) {
-                    
-                    var itemsPerRow = 4;
-                    var itemCount = 0;
-
-                    var rowToAdd = null;
-
-                    for (var productIndex in data) {
-                        
-                        itemCount = itemCount + 1;
-                        var product = data[productIndex];
-
-                        if (itemCount % itemsPerRow == 1) {
-                            
-                            if (rowToAdd != null) {
-                                productlist.appendChild(rowToAdd);
-                            }
-
-                            rowToAdd = document.createElement("div");
-                            rowToAdd.className = "row";
-                        }
-
-                        const productToAdd = document.createElement("div");
-                        const productLine1 = document.createElement("a");
-                        const productLine1Image = document.createElement("img");
-                        const productLine2 = document.createElement("h4");
-                        const productLine3 = document.createElement("h5");
-                        const productLine4 = document.createElement("p");
-
-                        productToAdd.className = "col-4";
-
-                        productLine1.href = "product_details.html?productId=" + product.productId;
-                        productLine1Image.src = product.imageUrl;
-                        productLine1.appendChild(productLine1Image);
-
-                        productLine2.innerText = product.title;
-                        productLine3.innerText = product.category;
-                        productLine4.innerText = product.price + " €";
-
-                        productToAdd.appendChild(productLine1);
-                        productToAdd.appendChild(productLine2);
-                        productToAdd.appendChild(productLine3);
-                        productToAdd.appendChild(productLine4);
-                        rowToAdd.appendChild(productToAdd);
-
-                    }
-
-                    if (rowToAdd != null) {
-                                productlist.appendChild(rowToAdd);
-                            }
-
-
-                })
+            showProducts(productlist,[]);
 
         }        
 

@@ -57,3 +57,72 @@ function refreshCartCountLabel() {
 
     cartItemCountLabel.innerText = itemCount;
 }
+
+function showProducts(parentElement,jobtitles) {
+
+    fetch("./data/products.json")
+        .then(function (response) {                    
+            return response.json();
+        })
+        .then(function (data) {
+            
+            var itemsPerRow = 4;
+            var itemCount = 0;
+
+            var rowToAdd = null;
+
+            for (var productIndex in data) {
+                                
+                var product = data[productIndex];
+
+                if (jobtitles && jobtitles.length > 0)
+                {
+                    if (!jobtitles.includes(product.category))
+                        continue;
+                }
+
+                itemCount = itemCount + 1;
+
+                if (itemCount % itemsPerRow == 1) {
+                    
+                    if (rowToAdd != null) {
+                        productlist.appendChild(rowToAdd);
+                    }
+
+                    rowToAdd = document.createElement("div");
+                    rowToAdd.className = "row";
+                }
+
+                const productToAdd = document.createElement("div");
+                const productLine1 = document.createElement("a");
+                const productLine1Image = document.createElement("img");
+                const productLine2 = document.createElement("h4");
+                const productLine3 = document.createElement("h5");
+                const productLine4 = document.createElement("p");
+
+                productToAdd.className = "col-4";
+
+                productLine1.href = "product_details.html?productId=" + product.productId;
+                productLine1Image.src = product.imageUrl;
+                productLine1.appendChild(productLine1Image);
+
+                productLine2.innerText = product.title;
+                productLine3.innerText = product.category;
+                productLine4.innerText = product.price + " €";
+
+                productToAdd.appendChild(productLine1);
+                productToAdd.appendChild(productLine2);
+                productToAdd.appendChild(productLine3);
+                productToAdd.appendChild(productLine4);
+                rowToAdd.appendChild(productToAdd);
+
+            }
+
+            if (rowToAdd != null) {
+                parentElement.appendChild(rowToAdd);
+            }
+
+
+        })
+
+}

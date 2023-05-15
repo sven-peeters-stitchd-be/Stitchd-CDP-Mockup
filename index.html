@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="scripts/generic.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
-    <link rel="shortcut serviceworker" type="text/javascript" href="scripts/service-worker.js?">
 
     <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -29,7 +28,7 @@
         experimental: {
             non_personalized_weblayers: true
         },
-        new_experiments: { mode: "sync" },
+        new_experiments: { mode: "async" },
         // replace with current customer ID or leave commented out for an anonymous customer
         // customer: window.currentUserId,
         track: {
@@ -55,7 +54,7 @@
                 <nav>
                     <ul id="MenuItems">
                         <li><a class="selected-nav-item" href="index.html">Home</a></li>
-                        <li><a href="products.html">Products</a></li>
+                        <li><a href="products.html">Profiles</a></li>
                         <li><a id="nav-account" href="account.html">Account</a></li>
                     </ul>
                 </nav>
@@ -76,6 +75,22 @@
         What we stand for
     </h2> 
     <p class="stitch_text">At Stitchd, we always present ourselves as we are. We aim for collegiality, both in our team and with customers. We are not a one-man show, but a team that both gains and gives confidence in order to learn and grow. We do this in a respectful and empathetic way, so that we can get the best out of every individual, team and organisation.</p>
+    </div>
+
+    <div id="product-list-section-project-managers" class="small-container">
+        <div class="row row-2">
+            <h2 class="stitchd_title">Recommanded Profiles</h2>        
+        </div>
+        
+        
+    </div>
+
+    <div id="product-list-section-digital-analysts" class="small-container">
+        <div class="row row-2">
+            <h2 class="stitchd_title">Recommanded Profiles</h2>        
+        </div>
+        
+        
     </div>
 
     <!-- Footer -->
@@ -116,9 +131,21 @@
 
     <script>
 
-        function onLoad() {            
+        var productlistManagers = document.getElementById("product-list-section-project-managers");
+        var productlistDigitalAnalysts = document.getElementById("product-list-section-digital-analysts");
+
+        function onLoad() {
+
+            debugger;
+
             refreshAccountInfoLabel();
+            
+            showProducts(productlistManagers,['Project Manager']);
+            showProducts(productlistDigitalAnalysts,['Digital Analyst']);
+
         }
+
+
 
     </script>
 
