@@ -28,11 +28,15 @@
         experimental: {
             non_personalized_weblayers: true
         },
-        new_experiments: { mode: "async" },
+        new_experiments: { mode: "sync" },
+        service_worker_path: 'scripts/service-worker.js',
         // replace with current customer ID or leave commented out for an anonymous customer
         // customer: window.currentUserId,
         track: {
             visits: true,
+            activity: true,
+            exists: true,
+            google_analytics: true,
         },
     });
     exponea.start();
@@ -141,18 +145,7 @@
             checkoutButton.addEventListener("click",checkOut);
 
         }
-
-        function generate_uuidv4() {
-            var dt = new Date().getTime();
-            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,
-            function( c ) {
-               var rnd = Math.random() * 16;//random number in range 0 to 16
-               rnd = (dt + rnd)%16 | 0;
-               dt = Math.floor(dt/16);
-               return (c === 'x' ? rnd : (rnd & 0x3 | 0x8)).toString(16);
-            });
-         }
-
+        
         function checkOut() {
 
             if (localStorage.cartContent != null) {

@@ -28,11 +28,15 @@
         experimental: {
             non_personalized_weblayers: true
         },
-        new_experiments: { mode: "async" },
+        new_experiments: { mode: "sync" },
+        service_worker_path: 'scripts/service-worker.js',
         // replace with current customer ID or leave commented out for an anonymous customer
         // customer: window.currentUserId,
         track: {
             visits: true,
+            activity: true,
+            exists: true,
+            google_analytics: true,
         },
     });
     exponea.start();
