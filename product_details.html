@@ -19,7 +19,7 @@
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-KS2K87S');</script>
-        <!-- End Google Tag Manager -->
+    <!-- End Google Tag Manager -->
 
     <style>.xnpe_async_hide{opacity:0 !important}</style>
     <script>
@@ -42,7 +42,6 @@
     });
     exponea.start();
     </script>
-
 </head>
 
 <body onload="onLoad()">
@@ -58,7 +57,7 @@
                 </div>
                 <nav>
                     <ul id="MenuItems">
-                        <li><a class="selected-nav-item" href="index.html">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="products.html">Profiles</a></li>
                         <li><a id="nav-account" href="account.html">Account</a></li>
                     </ul>
@@ -68,38 +67,26 @@
                     <div>
                         <a id="cart-item-count" style="text-decoration:none" class="overlay-cart-text" href="cart.html">0</a>
                     </div>
-                </div>                
+                </div>    
                 <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
             </div>
-            
         </div>
     </div>
 
-    <div>
-    <h2 class="stitchd_title">
-        What we stand for
-    </h2> 
-    <p class="stitch_text">At Stitchd, we always present ourselves as we are. We aim for collegiality, both in our team and with customers. We are not a one-man show, but a team that both gains and gives confidence in order to learn and grow. We do this in a respectful and empathetic way, so that we can get the best out of every individual, team and organisation.</p>
-    </div>
-
-    <div id="product-list-section-project-managers" class="small-container">
-        <div class="row row-2">
-            <h2 class="stitchd_title">Recommanded Profiles</h2>        
+    <!-- Single Products -->
+    <div class="small-container single-product">
+        <div class="row">
+            <div class="col-2">
+                <img width="100%" id="ProductImg">                
+            </div>
+            <div id="product-detail-div" class="col-2">
+                
+            </div>
         </div>
-        
-        
     </div>
-
-    <div id="product-list-section-digital-analysts" class="small-container">
-        <div class="row row-2">
-            <h2 class="stitchd_title">Recommanded Profiles</h2>        
-        </div>
         
-        
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
+     <!-- Footer -->
+     <div class="footer">
         <div class="container">
             <div class="row">                
                 <div class="footer-col-1">
@@ -135,23 +122,161 @@
     </script>
 
     <script>
+        
+        var productDetail = document.getElementById("product-detail-div");
+        var productImg = document.getElementById("ProductImg");
 
-        var productlistManagers = document.getElementById("product-list-section-project-managers");
-        var productlistDigitalAnalysts = document.getElementById("product-list-section-digital-analysts");
+        var product = null;
 
         function onLoad() {
 
             refreshAccountInfoLabel();
-            
-            showProducts(productlistManagers,['Project Manager']);
-            showProducts(productlistDigitalAnalysts,['Digital Analyst']);
+
+            fetch("./data/products.json")
+                .then(function (response) {                    
+                    return response.json();
+                })
+                .then(function (data) {
+
+                    const productIdToDisplay = new URLSearchParams(window.location.search).get("productId");
+                    var productFound = false;
+                    
+                    for (var productIndex in data) {
+                        
+                        var thisProduct = data[productIndex];
+                        if (thisProduct.productId == productIdToDisplay) {
+
+                            product = thisProduct;
+
+                            productFound = true;
+
+                            productImg.src = product.imageUrl;
+
+                            const productDetails1 = document.createElement("h1");
+                            const productDetails2 = document.createElement("h3");
+                            const productDetails3 = document.createElement("h4");
+                            const productDetails4 = document.createElement("h3");
+                            const productDetails4Intersect = document.createElement("i");
+                            const productDetails5 = document.createElement("br");
+                            const productDetails6 = document.createElement("p");
+
+                            const productDetailsAddToCartInput = document.createElement("input");
+                            const productDetailsAddToCartButton = document.createElement("a");
+
+                            productDetails1.innerText = product.title;
+                            productDetails2.innerText = product.category;
+                            productDetails3.innerText = product.price + " €";
+
+                            productDetailsAddToCartInput.type = "number";
+                            productDetailsAddToCartInput.value = 1;
+                            productDetailsAddToCartInput.id = "addtocart-quantity";
+
+                            productDetailsAddToCartButton.className = "btn";
+                            productDetailsAddToCartButton.innerText = "Add To Cart";
+                            productDetailsAddToCartButton.addEventListener("click",AddToCart);
+
+                            productDetails4.innerText = "Product Details"
+                            productDetails4Intersect.className = "fa fa-indent"
+                            productDetails4.appendChild(productDetails4Intersect);
+
+                            productDetails6.innerText = product.description;
+
+                            productDetail.appendChild(productDetails1);
+                            productDetail.appendChild(productDetails2);
+                            productDetail.appendChild(productDetails3);
+
+                            productDetail.appendChild(productDetailsAddToCartInput);
+                            productDetail.appendChild(productDetailsAddToCartButton);
+
+                            productDetail.appendChild(productDetails4);
+                            productDetail.appendChild(productDetails5);
+                            productDetail.appendChild(productDetails6);
+
+                            exponea.track('view_item', {
+                                product_id: thisProduct.productId,                                
+                                price: product.price,
+                                title: product.title,
+                                category_level_1 : product.category
+                              });
+                        
+                            exponea.track('view_category', {
+                                category_level_1 : product.category
+                            });
+
+                        }
+
+                    }
+
+                    if (productFound == false) {
+
+                        const productNotFound = document.createElement("div");
+                        const productNotFoundTitle = document.createElement("h1");
+                        productNotFoundTitle.innerText = "Product with id " + productIdToDisplay + " not found";
+                        productNotFound.appendChild(productNotFoundTitle);
+
+                        productDetail.appendChild(productNotFound);
+                    }
+
+                })
+
 
         }
 
+        function AddToCart() {
 
+            var addtocartquantity = document.getElementById("addtocart-quantity");
+
+            var cartContent = {};
+            cartContent.products = [];            
+
+            if (localStorage.cartContent != null) {
+                cartContent = JSON.parse(localStorage.cartContent);
+            }
+
+            var productFound = false;
+            var initialQuantity = 0;
+
+            for (var cartProductIndex in cartContent.products) { 
+
+                if (cartContent.products[cartProductIndex].product.productId == product.productId)
+                {
+                    productFound = true;
+                    initialQuantity = cartContent.products[cartProductIndex].quantity;
+                    cartContent.products[cartProductIndex].quantity = cartContent.products[cartProductIndex].quantity + parseInt(addtocartquantity.value);                    
+                    break;
+                }
+
+            }
+
+            if (productFound == false) {
+
+                var newCartProduct = {};
+                newCartProduct.quantity = parseInt(addtocartquantity.value);
+                newCartProduct.product = product;                
+
+                cartContent.products.push(newCartProduct);
+
+            }
+
+            exponea.track('cart_update', {
+                action: 'add',
+                product_list: [{item_id: product.productId, item_quantity:parseInt(addtocartquantity.value)}],
+                total_quantity: initialQuantity + parseInt(addtocartquantity.value),
+                total_price: (initialQuantity + parseInt(addtocartquantity.value)) * product.price,
+                price: product.price,
+                title: product.title,
+                category_1: product.category
+                
+            });
+
+
+            localStorage.cartContent = JSON.stringify(cartContent);
+
+            refreshCartCountLabel();
+
+        }
 
     </script>
-
 </body>
 
 </html>

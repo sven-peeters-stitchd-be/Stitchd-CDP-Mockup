@@ -19,7 +19,7 @@
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-KS2K87S');</script>
-        <!-- End Google Tag Manager -->
+    <!-- End Google Tag Manager -->
 
     <style>.xnpe_async_hide{opacity:0 !important}</style>
     <script>
@@ -58,8 +58,8 @@
                 </div>
                 <nav>
                     <ul id="MenuItems">
-                        <li><a class="selected-nav-item" href="index.html">Home</a></li>
-                        <li><a href="products.html">Profiles</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a class="selected-nav-item" href="products.html">Profiles</a></li>
                         <li><a id="nav-account" href="account.html">Account</a></li>
                     </ul>
                 </nav>
@@ -68,38 +68,24 @@
                     <div>
                         <a id="cart-item-count" style="text-decoration:none" class="overlay-cart-text" href="cart.html">0</a>
                     </div>
-                </div>                
+                </div>    
                 <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
             </div>
-            
         </div>
     </div>
 
-    <div>
-    <h2 class="stitchd_title">
-        What we stand for
-    </h2> 
-    <p class="stitch_text">At Stitchd, we always present ourselves as we are. We aim for collegiality, both in our team and with customers. We are not a one-man show, but a team that both gains and gives confidence in order to learn and grow. We do this in a respectful and empathetic way, so that we can get the best out of every individual, team and organisation.</p>
-    </div>
+    <!-- All Products -->
 
-    <div id="product-list-section-project-managers" class="small-container">
+    <div id="product-list-section" class="small-container">
         <div class="row row-2">
-            <h2 class="stitchd_title">Recommanded Profiles</h2>        
+            <h2>All Profiles</h2>        
         </div>
         
         
     </div>
 
-    <div id="product-list-section-digital-analysts" class="small-container">
-        <div class="row row-2">
-            <h2 class="stitchd_title">Recommanded Profiles</h2>        
-        </div>
-        
-        
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
+     <!-- Footer -->
+     <div class="footer">
         <div class="container">
             <div class="row">                
                 <div class="footer-col-1">
@@ -136,19 +122,15 @@
 
     <script>
 
-        var productlistManagers = document.getElementById("product-list-section-project-managers");
-        var productlistDigitalAnalysts = document.getElementById("product-list-section-digital-analysts");
+        var productlist = document.getElementById("product-list-section");
 
         function onLoad() {
 
             refreshAccountInfoLabel();
-            
-            showProducts(productlistManagers,['Project Manager']);
-            showProducts(productlistDigitalAnalysts,['Digital Analyst']);
 
-        }
+            showProducts(productlist,[]);
 
-
+        }        
 
     </script>
 

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Stitchd Demo Webshop Site</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="scripts/generic.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
+
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KS2K87S');</script>
+    <!-- End Google Tag Manager -->
+
+    <style>.xnpe_async_hide{opacity:0 !important}</style>
+    <script>
+        !function(e,n,t,i,o,r){function s(e){if("number"!=typeof e)return e;const n=new Date;return new Date(n.getTime()+1e3*e)}const c=4e3,a="xnpe_async_hide";function p(e){return e.reduce((function(e,n){return e[n]=function(){e._.push([n.toString(),arguments])},e}),{_:[]})}function m(e,n,t){const i=t.createElement(n);i.src=e;const o=t.getElementsByTagName(n)[0];return o.parentNode.insertBefore(i,o),i}function l(e){return"[object Date]"===Object.prototype.toString.call(e)}r.target=r.target||"https://api.exponea.com",r.file_path=r.file_path||r.target+"/js/exponea.min.js",o[n]=p(["anonymize","initialize","identify","getSegments","update","track","trackLink","trackEnhancedEcommerce","getHtml","showHtml","showBanner","showWebLayer","ping","getAbTest","loadDependency","getRecommendation","reloadWebLayers","_preInitialize","_initializeConfig"]),o[n].notifications=p(["isAvailable","isSubscribed","subscribe","unsubscribe"]),o[n].segments=p(["subscribe"]),o[n]["snippetVersion"]="v3.0.0",function(e,n,t){e[n]["_"+t]={},e[n]["_"+t].nowFn=Date.now,e[n]["_"+t].snippetStartTime=e[n]["_"+t].nowFn()}(o,n,"performance"),function(e,n,t,i,o,r){e[o]={sdk:e[i],sdkObjectName:i,skipExperiments:!!t.new_experiments,sign:t.token+"/"+(r.exec(n.cookie)||["","new"])[1],path:t.target}}(o,e,r,n,i,RegExp("__exponea_etc__"+"=([\w-]+)")),function(e,n,t){m(e.file_path,n,t)}(r,t,e),function(e,n,t,i,o,r,p){if(!e.new_experiments)return;!0===e.new_experiments&&(e.new_experiments={});const u=e.new_experiments.hide_class||a,_=e.new_experiments.timeout||c,f=encodeURIComponent(r.location.href.split("#")[0]);let d;e.cookies&&e.cookies.expires&&("number"==typeof e.cookies.expires||l(e.cookies.expires)?d=s(e.cookies.expires):e.cookies.expires.tracking&&("number"==typeof e.cookies.expires.tracking||l(e.cookies.expires.tracking))&&(d=s(e.cookies.expires.tracking))),d&&d<new Date&&(d=void 0);const g=e.target+"/webxp/"+n+"/"+r[t].sign+"/modifications.min.js?http-referer="+f+"&timeout="+_+"ms"+(d?"&cookie-expires="+Math.floor(d.getTime()/1e3):"");"sync"===e.new_experiments.mode&&r.localStorage.getItem("__exponea__sync_modifications__")?function(e,n,t,i,o){t[o][n]="<"+n+' src="'+e+'"></'+n+">",i.writeln(t[o][n]),i.writeln("<"+n+">!"+o+".init && document.writeln("+o+"."+n+'.replace("/'+n+'/", "/'+n+'-async/").replace("><", " async><"))</'+n+">")}(g,n,r,p,t):function(e,n,t,i,o,r,s,c){r.documentElement.classList.add(e);const a=m(t,i,r);function p(){o[c].init||m(t.replace("/"+i+"/","/"+i+"-async/"),i,r)}function l(){r.documentElement.classList.remove(e)}a.onload=p,a.onerror=p,o.setTimeout(l,n),o[s]._revealPage=l}(u,_,g,n,r,p,o,t)}(r,t,i,0,n,o,e),function(e,n,t){var i;e[n]._initializeConfig(t),(null===(i=t.experimental)||void 0===i?void 0:i.non_personalized_weblayers)&&e[n]._preInitialize(t),e[n].start=function(i){i&&Object.keys(i).forEach((e=>t[e]=i[e])),e[n].initialize(t)}}(o,n,r)}(document,"exponea","script","webxpClient",window,{
+        target: "https://demoapp-api.bloomreach.com",
+        token: "ecf1328a-a16a-11ed-9e30-9a2f1af55a44",
+        experimental: {
+            non_personalized_weblayers: true
+        },
+        new_experiments: { mode: "sync" },
+        service_worker_path: 'scripts/service-worker.js',
+        // replace with current customer ID or leave commented out for an anonymous customer
+        // customer: window.currentUserId,
+        track: {
+            visits: true,
+            activity: true,
+            exists: true,
+            google_analytics: true,
+        },
+    });
+    exponea.start();
+    </script>
+</head>
+
+<body onload="onLoad()">
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KS2K87S"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png" alt="logo" width="125px"></a>
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Profiles</a></li>
+                        <li><a id="nav-account" href="account.html">Account</a></li>
+                    </ul>
+                </nav>                
+                <div class="cart-container">
+                    <a href="cart.html"><img src="images/cart_selected.png" width="30px" height="30px"></a>
+                    <div>
+                        <a id="cart-item-count" style="text-decoration:none" class="overlay-cart-text" href="cart.html">0</a>
+                    </div>
+                </div>
+                <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart items details -->
+    <div class="small-container cart-page">
+        <table id="cart_items">
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>            
+        </table>
+        <br>
+        <div class="total-price">
+            <table>                
+                <tr>
+                    <td>Total</td>
+                    <td id="cart_total">0 €</td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <a id="checkout_button" class="btn btnCheckOut">Checkout</a>
+        </div>
+    </div>
+
+     <!-- Footer -->
+     <div class="footer">
+        <div class="container">
+            <div class="row">                
+                <div class="footer-col-1">
+                    <img src="images/logo.png">
+                    <p>Tailoring digital data to fit your needs
+                    </p>
+                </div>                
+                <div class="footer-col-2">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/company/stitchd">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2023 - Stitchd</p>
+        </div>
+    </div>
+
+    <!-- javascript -->
+
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px"
+            }
+            else {
+                MenuItems.style.maxHeight = "0px"
+            }
+        }
+    </script>
+
+    <script>
+        
+        var cartItems = document.getElementById("cart_items");
+        var cartTotal = document.getElementById("cart_totals");
+        var checkoutButton = document.getElementById("checkout_button");
+
+        function onLoad() {
+
+            refreshAccountInfoLabel();
+            showCart();
+
+            checkoutButton.addEventListener("click",checkOut);
+
+        }
+        
+        function checkOut() {
+
+            if (localStorage.cartContent != null) {
+
+                var cartContent = JSON.parse(localStorage.cartContent);
+                var purchase_id = generate_uuidv4();
+
+                var productlist = [];
+                var cartTotal = 0.0;
+
+                for (var cartProductIndex in cartContent.products) { 
+
+                    var cartProduct = cartContent.products[cartProductIndex];
+                    
+                    exponea.track('purchase_item', {
+                        product_id: cartProduct.product.productId,
+                        price: cartProduct.product.price,
+                        quantity: cartProduct.quantity,
+                        title: cartProduct.product.title,
+                        category_level_1 : cartProduct.product.category,
+                        purchase_id: purchase_id
+                        
+                    });
+
+                    var productToAdd = {
+                        product_id: cartProduct.product.productId,
+                        quantity: cartProduct.quantity,
+                    };
+                    productlist.push(productToAdd);
+
+                    cartTotal = cartTotal + cartProduct.quantity * cartProduct.product.price;
+
+    
+                }
+
+                exponea.track('purchase', {
+                    product_list: productlist,
+                    currency: "EUR",
+                    total_price: cartTotal,
+                    purchase_id: purchase_id
+                    
+                });
+            }
+
+            localStorage.removeItem("cartContent");
+            showCart();
+
+        }
+
+        function removeProduct(event) {
+
+            var productIdToRemove = event.target.dataset.productId;
+
+            if (localStorage.cartContent != null) {
+                var cartContent = JSON.parse(localStorage.cartContent);
+
+                for (var cartProductIndex in cartContent.products) { 
+
+                    if (cartContent.products[cartProductIndex].product.productId == productIdToRemove)
+                    {
+
+                        exponea.track('cart_update', {
+                            action: 'remove',
+                            product_list: [{item_id: cartContent.products[cartProductIndex].product.productId, item_quantity:cartContent.products[cartProductIndex].quantity}],
+                            total_quantity: cartContent.products[cartProductIndex].quantity,
+                            total_price: cartContent.products[cartProductIndex].quantity * cartContent.products[cartProductIndex].product.price,
+                            price: cartContent.products[cartProductIndex].product.price,
+                            title: cartContent.products[cartProductIndex].product.title,
+                            category_1: cartContent.products[cartProductIndex].product.category
+                            
+                        });
+
+                        cartContent.products.splice(cartProductIndex,1);
+                        break;
+                    }
+    
+                }
+
+                if (cartContent.products.length > 0) {
+                    localStorage.cartContent = JSON.stringify(cartContent);
+                }
+                else {
+                    localStorage.removeItem("cartContent");
+                }
+                
+
+                showCart();
+            }
+
+        }
+
+        function showCart() {
+
+            var cartTotal = 0.0;
+
+            var cartContent = {};
+            cartContent.products = [];            
+
+            if (localStorage.cartContent != null) {
+                cartContent = JSON.parse(localStorage.cartContent);
+            }
+
+            for(var i = cartItems.rows.length - 1; i > 0; i--)
+            {
+                cartItems.deleteRow(i);
+            }            
+
+            for (var cartProductIndex in cartContent.products) { 
+
+                var thisCartProduct = cartContent.products[cartProductIndex];
+
+                const productRow = document.createElement("tr");
+                const productRowProduct = document.createElement("td");
+                const productRowQuantity = document.createElement("td");
+                const productRowSubTotal = document.createElement("td");
+
+                const productRowProductDiv = document.createElement("div");
+                productRowProductDiv.className = "cart-info";
+
+                const productRowProductDivImg = document.createElement("img");
+                productRowProductDivImg.src = thisCartProduct.product.imageUrl;
+                productRowProductDiv.appendChild(productRowProductDivImg);
+                
+                const productRowProductDivDetails = document.createElement("div");
+                const productRowProductDivDetails1 = document.createElement("p");
+                productRowProductDivDetails1.innerText = thisCartProduct.product.title;                
+                const productRowProductDivDetails2 = document.createElement("small");
+                productRowProductDivDetails2.innerText = "Price: " + thisCartProduct.product.price + " €";
+                const productRowProductDivDetails3 = document.createElement("br");
+                const productRowProductDivDetails4 = document.createElement("a");
+                productRowProductDivDetails4.innerText = "Remove";
+                productRowProductDivDetails4.dataset.productId = thisCartProduct.product.productId;
+                productRowProductDivDetails4.addEventListener("click",removeProduct);
+
+                productRowProductDivDetails.appendChild(productRowProductDivDetails1);
+                productRowProductDivDetails.appendChild(productRowProductDivDetails2);
+                productRowProductDivDetails.appendChild(productRowProductDivDetails3);
+                productRowProductDivDetails.appendChild(productRowProductDivDetails4);
+                productRowProductDiv.appendChild(productRowProductDivDetails);
+
+                productRowProduct.appendChild(productRowProductDiv);
+               
+                productRowQuantity.innerText = thisCartProduct.quantity;                
+                productRowSubTotal.innerText = thisCartProduct.quantity * thisCartProduct.product.price + " €";
+                cartTotal = cartTotal + thisCartProduct.quantity * thisCartProduct.product.price;
+
+                productRow.appendChild(productRowProduct);
+                productRow.appendChild(productRowQuantity);
+                productRow.appendChild(productRowSubTotal);
+                
+                cartItems.appendChild(productRow);                
+            }
+
+            cart_total.innerText = cartTotal + " €";
+
+            refreshCartCountLabel();
+
+        }
+
+    </script>
+
+</body>
+
+</html>
