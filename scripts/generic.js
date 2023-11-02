@@ -121,7 +121,7 @@ function showProducts(parentElement,jobtitles) {
                 productToAdd.appendChild(productLine4);
 
                 productToAdd.addEventListener("click", function() {
-                    alert(product.productId);
+                    atrack.trackEvent({"event": "button-click", "info" : {"name" : "btnProfile" + + product.productId, "targeturl" : "product_details.html?productId=" + product.productId , "type" : "image" , "profile" : + product.productId}})
                 });
                 
                 rowToAdd.appendChild(productToAdd);
