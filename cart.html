@@ -154,6 +154,7 @@
             showCart();
 
             checkoutButton.addEventListener("click",checkOut);
+            checkoutButton.addEventListener("click",atrack.trackInteraction);
 
         }
         
@@ -199,6 +200,8 @@
                     purchase_id: purchase_id
                     
                 });
+
+                analyticstracker.trackEvent({"event": "button-impression", "info" : {"text" : "Checkout", "name" : "btnCheckOut"}})
             }
 
             localStorage.removeItem("cartContent");
