@@ -119,6 +119,11 @@ function showProducts(parentElement,jobtitles) {
                 productToAdd.appendChild(productLine2);
                 productToAdd.appendChild(productLine3);
                 productToAdd.appendChild(productLine4);
+
+                productToAdd.addEventListener("click", function() {
+                    alert(product.productId);
+                });
+                
                 rowToAdd.appendChild(productToAdd);
 
             }
